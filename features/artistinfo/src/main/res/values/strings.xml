@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="artist_details">Artist Details</string>
+    <string name="label_type">Type: %s</string>
+    <string name="label_gender">Gender: %s</string>
+    <string name="label_country">Country: %s</string>
+    <string name="label_aka">Aka: %s</string>
+    <string name="label_name">Name: %s</string>
+</resources>

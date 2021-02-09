@@ -1,0 +1,15 @@
+def scripts = "$project.rootDir/scripts/"
+apply from: "$scripts/common-android-feature.gradle"
+
+dependencies {
+    implementation Libs.kotlin
+    implementation project(':common')
+
+    implementation SupportLibs.lifecycleExtensions
+    kapt SupportLibs.lifecycleCompiler
+
+    // tests
+    implementation TestLibs.junit
+    implementation TestLibs.coreTesting
+    implementation TestLibs.mockk
+}

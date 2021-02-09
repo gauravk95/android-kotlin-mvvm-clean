@@ -1,0 +1,67 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+
+def scripts = "$project.rootDir/scripts/"
+apply from: "$scripts/app-version.gradle"
+apply from: "$scripts/app-dimensions.gradle"
+apply from: "$scripts/proguard-rules.gradle"
+apply from: "$scripts/signing-config.gradle"
+apply from: "$scripts/ktlint.gradle"
+
+android {
+    compileSdkVersion Versions.targetSdk
+    testOptions.unitTests.includeAndroidResources = true
+    defaultConfig {
+        applicationId "com.gk.android"
+        minSdkVersion Versions.minSdk
+        targetSdkVersion Versions.targetSdk
+        multiDexEnabled true
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    lintOptions.abortOnError false
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation Libs.kotlin
+
+    implementation project(':domain')
+    implementation project(':data')
+    implementation project(':navigation')
+    implementation project(':common')
+    implementation project(':ui_components')
+
+    // features
+    implementation project(':features:artist')
+    implementation project(':features:artistinfo')
+
+    // views
+    implementation SupportLibs.appcompat
+    implementation SupportLibs.material
+    implementation SupportLibs.recyclerview
+    implementation SupportLibs.constraintLayout
+    implementation SupportLibs.ktx
+    implementation SupportLibs.lifecycleViewModel
+    implementation SupportLibs.navigationKtx
+
+    implementation Libs.threetenabp
+
+    // injection
+    implementation Libs.koinAndroid
+    implementation Libs.koinAndroidScope
+    implementation Libs.koinAndroidViewModel
+
+    // tests
+    testImplementation TestLibs.junit
+    testImplementation project(':common_test')
+    testImplementation TestLibs.mockk
+    testImplementation TestLibs.testCore
+    testImplementation TestLibs.androidXJunitExt
+    testImplementation TestLibs.robolectric
+}

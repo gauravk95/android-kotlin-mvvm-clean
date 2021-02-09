@@ -1,0 +1,37 @@
+def scripts = "$project.rootDir/scripts/"
+apply from: "$scripts/common-android-feature.gradle"
+apply from: "$scripts/app-dimensions.gradle"
+
+android {
+    buildFeatures {
+        viewBinding = true
+    }
+}
+
+dependencies {
+    implementation Libs.kotlin
+    implementation project(':common')
+    implementation project(':navigation')
+
+    implementation SupportLibs.appcompat
+    implementation SupportLibs.material
+    implementation SupportLibs.constraintLayout
+    implementation SupportLibs.ktx
+    implementation SupportLibs.lifecycleRuntime
+
+    implementation SupportLibs.lifecycleExtensions
+    implementation Libs.koinAndroidViewModel
+
+    implementation Libs.threetenabp
+    implementation Libs.glide
+
+    // tests
+    testImplementation project(':common_test')
+    testImplementation TestLibs.junit
+    testImplementation TestLibs.mockk
+    androidTestImplementation TestLibs.testCore
+    androidTestImplementation TestLibs.testRunner
+    androidTestImplementation TestLibs.testRules
+    androidTestImplementation TestLibs.mockkAndroid
+
+}

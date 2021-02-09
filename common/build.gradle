@@ -1,0 +1,9 @@
+def scripts = "$project.rootDir/scripts/"
+apply from: "$scripts/common-android-feature.gradle"
+
+dependencies {
+    implementation Libs.kotlin
+
+    implementation SupportLibs.appcompat
+    implementation SupportLibs.material
+}

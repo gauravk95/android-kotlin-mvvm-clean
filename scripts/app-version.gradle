@@ -1,0 +1,20 @@
+def buildNumber = project.properties.get("build_number", 0)
+
+android {
+    defaultConfig {
+        versionCode major * 10000 + minor * 100 + patch
+        versionName "$major.$minor.$patch"
+        resValue "string", "app_version", "$versionName"
+    }
+
+    buildTypes {
+        debug {
+            applicationIdSuffix ".debug"
+            versionNameSuffix "-debug"
+        }
+        release {
+            debuggable false
+            versionNameSuffix "-release$buildNumber"
+        }
+    }
+}

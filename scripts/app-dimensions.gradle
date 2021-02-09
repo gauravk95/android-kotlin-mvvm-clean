@@ -1,0 +1,16 @@
+android {
+    flavorDimensions "env"
+
+    productFlavors {
+        dev {
+            dimension "env"
+            buildConfigField "String", "API_ENDPOINT", "\"https://graphbrainz.herokuapp.com/\""
+        }
+
+        prod {
+            dimension "env"
+            buildConfigField "String", "API_ENDPOINT", "\"https://graphbrainz.herokuapp.com/\""
+        }
+    }
+}
+

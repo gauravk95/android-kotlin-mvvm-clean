@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="color_primary">@color/coral</color>
+    <color name="color_primary_variant">@color/coral_50p</color>
+    <color name="color_secondary">@color/green</color>
+
+    <!--colorBackground appears behind scrollable content and is used for the default window-->
+    <!--background. colorSurface is mapped to the surface of components such as cards, sheets-->
+    <!--and menus. colorError is used to indicate an error state for components such as-->
+    <!--text fields.-->
+    <color name="color_background">@color/white</color>
+    <color name="color_surface">@color/white</color>
+    <color name="color_error">@color/red</color>
+
+    <!--"On" colors define how text, icons and strokes are colored in relation to the surface-->
+    <!--on which they appear.-->
+    <color name="color_on_primary">@color/white</color>
+    <color name="color_on_secondary">@color/white</color>
+    <color name="color_on_background">@color/gray_6f</color>
+    <color name="color_on_surface">@color/gray_6f</color>
+    <color name="color_on_error">@color/white</color>
+
+    <color name="white">#FFFFFF</color>
+    <color name="white_50p">#80FFFFFF</color>
+    <color name="white_25p">#40FFFFFF</color>
+    <color name="transparent">#00000000</color>
+
+    <!--Fills-->
+    <!--all blacks except 00 should be black_15-->
+    <color name="black">#000000</color>
+    <color name="black_15">#151618</color>
+    <color name="black_42">#424344</color>
+    <color name="black_15_50p">#80151618</color>
+    <color name="black_15_25p">#40151618</color>
+    <color name="black_04_40p">#6604040f</color>
+    <color name="black_04_0p">#0004040f</color>
+
+    <color name="green">#2ed199</color>
+    <color name="yellow">#FBD545</color>
+    <color name="blue">#55c9ff</color>
+    <color name="blue_50p">#8055c9ff</color>
+    <color name="red">#f1485b</color>
+    <color name="red_50p">#80f1485b</color>
+    <color name="pink">#f95794</color>
+    <color name="coral">#ff7f57</color>
+    <color name="coral_50p">#80ff7f57</color>
+
+    <color name="purple_dark">#521baf</color>
+    <color name="purple">#6621D8</color>
+    <color name="purple_50p">#806621D8</color>
+    <color name="purple_25p">#406621D8</color>
+    <color name="purple_light">#834ce0</color>
+    <color name="purple_lightest">#ede6fb</color>
+    <color name="purple_f3">#d1bbf3</color>
+
+    <!--gray_44 becomes gray_42-->
+    <!--gray_72 becomes gray_6f-->
+    <!--gray_8c becomes gray_9c-->
+    <!--gray_e2 becomes gray_d9-->
+    <color name="gray_42">#424344</color>
+    <color name="gray_6f">#6f7071</color>
+    <color name="gray_9c">#9c9c9d</color>
+    <color name="gray_c9">#c9c9c9</color>
+    <color name="gray_d8">#D8D8D8</color>
+    <color name="gray_d9">#d9dbe0</color>
+    <color name="gray_f6">#f6f6f6</color>
+    <color name="gray_ef">#efefef</color>
+    <color name="gray_e9">#e9e9e9</color>
+    <color name="gray_eb">#ebebeb</color>
+
+    <color name="tenor_brand_blue">#007add</color>
+
+    <color name="red_a700">#DD2C00</color>
+    <color name="green_a700">#00C853</color>
+
+</resources>

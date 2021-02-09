@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardElevation="0dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/margin_standard">
+
+        <TextView
+            android:id="@+id/artist_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginEnd="@dimen/margin_small"
+            android:textSize="@dimen/text_sub_title"
+            android:textColor="@color/gray_42"
+            android:text="@string/placeholder"
+            android:layout_toStartOf="@id/bookmark_artist" />
+
+        <TextView
+            android:id="@+id/artist_disambiguation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginEnd="@dimen/margin_small"
+            android:textSize="@dimen/text_caption"
+            android:textColor="@color/gray_9c"
+            android:text="@string/placeholder"
+            android:layout_below="@id/artist_name"
+            android:layout_toStartOf="@id/bookmark_artist" />
+
+        <ImageView
+            android:id="@+id/bookmark_artist"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:padding="@dimen/margin_small"
+            android:background="?android:selectableItemBackground"
+            android:src="@drawable/ic_baseline_bookmark_24" />
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

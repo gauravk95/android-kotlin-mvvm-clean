@@ -1,0 +1,41 @@
+query Artists($query: String!, $first: Int!, $after: String!) {
+  search {
+    artists(query: $query, first: $first, after: $after) {
+      nodes {
+        ...ArtistBasicFragment
+      }
+      pageInfo {
+        startCursor
+        endCursor
+        hasNextPage
+      }
+    }
+  }
+}
+
+query Artist($id: ID!) {
+  node(id: $id) {
+    ...ArtistDetailsFragment
+  }
+}
+
+fragment ArtistDetailsFragment on Artist {
+  id
+  name
+  disambiguation
+  country
+  type
+  gender
+  fanArt {
+    thumbnails{
+      url
+    }
+  }
+}
+
+fragment ArtistBasicFragment on Artist {
+  id
+  name
+  disambiguation,
+  type
+}

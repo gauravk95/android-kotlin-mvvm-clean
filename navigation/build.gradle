@@ -1,0 +1,12 @@
+def scripts = "$project.rootDir/scripts/"
+apply from: "$scripts/common-android-feature.gradle"
+
+dependencies {
+    implementation SupportLibs.navigationRuntime
+    implementation project(":common")
+
+    implementation SupportLibs.androidXannotation
+    implementation SupportLibs.navigationFragKtx
+    implementation SupportLibs.navigationKtx
+}
+

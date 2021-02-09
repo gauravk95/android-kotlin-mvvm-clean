@@ -1,0 +1,34 @@
+def scripts = "$project.rootDir/scripts/"
+apply from: "$scripts/common-android-feature.gradle"
+apply from: "$scripts/app-dimensions.gradle"
+
+dependencies {
+    implementation project(":common")
+
+    implementation Libs.kotlin
+
+    // glide
+    implementation Libs.glide
+    implementation Libs.glideOkHttp
+
+    // paging
+    implementation Libs.pagingCommonKtx
+
+    // injection
+    implementation Libs.koinAndroid
+
+    implementation Libs.threetenabp
+
+
+    // tests
+    testImplementation TestLibs.junit
+    testImplementation TestLibs.mockk
+    testImplementation TestLibs.testCore
+    testImplementation TestLibs.coreTesting
+    testImplementation TestLibs.robolectric
+    testImplementation project(":common_test")
+}
+
+android {
+    testOptions.unitTests.includeAndroidResources = true
+}

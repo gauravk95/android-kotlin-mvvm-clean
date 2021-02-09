@@ -1,0 +1,41 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+    repositories {
+        google()
+        jcenter()
+        maven { url "https://jitpack.io" }
+    }
+    dependencies {
+        classpath "com.android.tools.build:gradle:${Versions.androidPlugin}"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.kotlin}"
+        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:${Versions.navigation}"
+        classpath("com.apollographql.apollo:apollo-gradle-plugin:${Versions.apollo}")
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+plugins {
+    id "com.github.ben-manes.versions" version "0.21.0"
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        maven { url 'https://jitpack.io' }
+    }
+}
+
+def appVersion = new File("$projectDir/app_version").text
+def (majorVersion, minorVersion, patchVersion) = appVersion.tokenize('.')
+
+ext {
+    major = majorVersion.toInteger()
+    minor = minorVersion.toInteger()
+    patch = patchVersion.toInteger()
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

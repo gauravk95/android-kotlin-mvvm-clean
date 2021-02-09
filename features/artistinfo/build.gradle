@@ -1,0 +1,33 @@
+def scripts = "$project.rootDir/scripts/"
+apply from: "$scripts/common-android-feature.gradle"
+apply plugin: 'kotlin-android'
+apply from: "$scripts/app-dimensions.gradle"
+
+dependencies {
+    implementation Libs.kotlin
+
+    implementation project(':domain')
+    implementation project(':common')
+    implementation project(':ui_components')
+    implementation project(':navigation')
+
+    // views
+    implementation SupportLibs.appcompat
+    implementation SupportLibs.material
+    implementation SupportLibs.constraintLayout
+    implementation SupportLibs.ktx
+    implementation SupportLibs.lifecycleViewModel
+    kapt SupportLibs.lifecycleCompiler
+    implementation SupportLibs.navigationFragKtx
+    implementation SupportLibs.navigationKtx
+
+    // injection
+    implementation Libs.koinAndroid
+    implementation Libs.koinAndroidViewModel
+
+    // tests
+    testImplementation TestLibs.junit
+    testImplementation project(':common_test')
+    testImplementation TestLibs.coreTesting
+    testImplementation TestLibs.mockk
+}

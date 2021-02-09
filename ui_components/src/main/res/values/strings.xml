@@ -1,0 +1,12 @@
+<resources>
+    <string name="system_dialog_btn_ok">Ok</string>
+    <string name="system_dialog_btn_cancel">Cancel</string>
+
+    <string name="label_artist_home">Home</string>
+    <string name="label_artist_bookmark">Bookmark</string>
+    <string name="placeholder">placeholder</string>
+    <string name="search_hint">Search for artists…</string>
+    <string name="bookmarked_artists">Your Bookmarked Artists</string>
+    <string name="bookmarked">Added Bookmark</string>
+    <string name="remove_bookmark">Removed Bookmark</string>
+</resources>

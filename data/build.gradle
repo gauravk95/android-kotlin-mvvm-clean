@@ -1,0 +1,38 @@
+def scripts = "$project.rootDir/scripts/"
+apply from: "$scripts/common-android-feature.gradle"
+apply from: "$scripts/app-dimensions.gradle"
+apply from: "$scripts/local-db-configuration.gradle"
+apply plugin: "com.apollographql.apollo"
+
+dependencies {
+
+    implementation Libs.kotlin
+
+    implementation project(":domain")
+    implementation project(":common")
+
+    // http
+    implementation Libs.apolloRuntime
+    implementation Libs.apolloCoroutines
+    implementation Libs.loggingInterceptor
+
+    // paging
+    implementation Libs.pagingCommonKtx
+
+    // local db
+    implementation Libs.roomRuntime
+    implementation Libs.roomKtx
+    kapt Libs.roomCompiler
+
+    implementation Libs.threetenabp
+
+    // injection
+    implementation Libs.koinAndroid
+
+    // tests
+    testImplementation TestLibs.junit
+    testImplementation TestLibs.mockk
+    testImplementation TestLibs.robolectric
+    testImplementation TestLibs.testCore
+    testImplementation project(':common_test')
+}

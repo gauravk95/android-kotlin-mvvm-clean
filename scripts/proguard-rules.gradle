@@ -1,0 +1,16 @@
+android {
+    buildTypes {
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'),
+                    "$project.rootDir/scripts/rules-proguard.pro"
+        }
+
+        release {
+            shrinkResources true
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'),
+                    "$project.rootDir/scripts/rules-proguard.pro"
+        }
+    }
+}
