@@ -28,6 +28,11 @@ Main modules:
 - **common**: this contains code that all modules can use, possibly other projects as well. This one need to be as generic as possible because of that.
 - **common_test**: this contains code that is used in all tests. Because of the way Gradle works, this had to be created as a separate module and should **only** be added as a dependency for testImplementation or androidTestImplementation.
 
+Others modules:
+- **buildSrc**: contains common dependencies to be used across application
+- **scripts**: contains gradle configs, flavours etc. to be used across the application
+
+
 ## Notes
 This project is work in progress
 
