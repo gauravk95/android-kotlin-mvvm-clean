@@ -38,7 +38,7 @@ This project is work in progress
 
 Improvements required: 
 
-- [ ] Change the Single Source of Truth to Local Database(Room DB) 
+- [ ] Single Source of Truth to Local Database(Room DB) 
 - [ ] Better state handling & error handling
 - [ ] Write tests - unit & ui
 
