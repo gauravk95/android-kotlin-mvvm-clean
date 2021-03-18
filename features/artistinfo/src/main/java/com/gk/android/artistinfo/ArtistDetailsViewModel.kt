@@ -1,7 +1,6 @@
 package com.gk.android.artistinfo
 
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.gk.android.common.SingleLiveEvent
 import com.gk.android.domain.Resource
@@ -10,14 +9,14 @@ import com.gk.android.domain.artist.interactor.GetArtistDetails
 import com.gk.android.domain.artist.model.Artist
 import com.gk.android.features.artistinfo.R
 import com.gk.android.navigation.ArtistArgs
+import com.gk.android.ui_components.viewmodel.BaseViewModel
 import kotlinx.coroutines.launch
 
 class ArtistDetailsViewModel constructor(
     private val getArtistDetails: GetArtistDetails,
     private val bookmarkArtist: BookmarkArtist
-) : ViewModel() {
+) : BaseViewModel() {
 
-    val toastMsg = SingleLiveEvent<Int>()
     val artist = MutableLiveData<Artist>()
 
     fun loadArtist(args: ArtistArgs) = viewModelScope.launch {

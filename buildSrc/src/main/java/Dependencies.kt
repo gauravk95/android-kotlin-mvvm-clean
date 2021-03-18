@@ -1,6 +1,6 @@
 object Versions {
     const val minSdk = 21
-    const val targetSdk = 30
+    const val targetSdk = 29
 
     // buildscript
     const val kotlin = "1.4.30"
@@ -23,7 +23,7 @@ object Versions {
     const val navigation = "2.3.2"
 
     // http
-    const val apollo = "2.5.3"
+    const val apollo = "2.5.4"
     const val glide = "4.9.0"
     const val loggingInterceptor = "3.14.1"
 

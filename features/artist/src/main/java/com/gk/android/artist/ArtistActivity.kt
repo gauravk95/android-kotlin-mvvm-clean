@@ -1,25 +1,21 @@
 package com.gk.android.artist
 
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.view.MenuItem
-import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.LiveData
 import androidx.navigation.NavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI
 import com.gk.android.artist.databinding.ActivityArtistBinding
 import com.gk.android.navigation.setupWithNavController
+import com.gk.android.ui_components.activities.BaseActivity
 
-class ArtistActivity : AppCompatActivity() {
+class ArtistActivity : BaseActivity<ActivityArtistBinding>() {
 
     private var currentNavController: LiveData<NavController>? = null
-    private lateinit var binding: ActivityArtistBinding
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityArtistBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-
         setupBottomNavigationBar()
     }
 
@@ -64,5 +60,9 @@ class ArtistActivity : AppCompatActivity() {
             return true
         }
         return super.onOptionsItemSelected(item)
+    }
+
+    override fun getViewBinding(layoutInflater: LayoutInflater): ActivityArtistBinding {
+        return ActivityArtistBinding.inflate(layoutInflater)
     }
 }

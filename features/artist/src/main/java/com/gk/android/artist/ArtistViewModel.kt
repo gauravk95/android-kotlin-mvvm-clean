@@ -1,7 +1,6 @@
 package com.gk.android.artist
 
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.paging.PagingData
 import androidx.paging.cachedIn
@@ -10,6 +9,7 @@ import com.gk.android.common.SingleLiveEvent
 import com.gk.android.domain.artist.interactor.BookmarkArtist
 import com.gk.android.domain.artist.interactor.SearchArtist
 import com.gk.android.domain.artist.model.Artist
+import com.gk.android.ui_components.viewmodel.BaseViewModel
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
@@ -20,14 +20,13 @@ const val DEFAULT_QUERY = "Justin"
 class ArtistViewModel constructor(
     private val searchArtist: SearchArtist,
     private val bookmarkArtist: BookmarkArtist
-) : ViewModel() {
+) : BaseViewModel() {
 
     private var searchJob: Job? = null
     private var currentQuery: String? = null
 
     val artistsData = MutableLiveData<PagingData<Artist>>()
     val goToDetails = SingleLiveEvent<Artist>()
-    val toastMsg = SingleLiveEvent<Int>()
 
     init {
         if (currentQuery.isNullOrBlank()) search(DEFAULT_QUERY)
