@@ -16,17 +16,16 @@ import com.gk.android.artist.databinding.FragmentArtistBinding
 import com.gk.android.artist.util.launchArtistDetails
 import com.gk.android.common.toast
 import com.gk.android.ui_components.bind
+import com.gk.android.ui_components.fragments.BaseFragment
 import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
-class ArtistFragment : Fragment() {
+class ArtistFragment : BaseFragment<FragmentArtistBinding>() {
 
     private val viewModel by sharedViewModel<ArtistViewModel>()
-    private lateinit var binding: FragmentArtistBinding
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        binding = FragmentArtistBinding.inflate(inflater, container, false)
-        return binding.root
+    override fun getViewBinding(inflater: LayoutInflater, container: ViewGroup?): FragmentArtistBinding {
+        return FragmentArtistBinding.inflate(inflater, container, false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
